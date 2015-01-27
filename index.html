@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>MozTrap API Tester</title>
+  </head>
+  <body>
+    <h4>https://moztrap.mozilla.org/api/v1/
+
+      <select name="resource" id="resource">
+        <option value="caseversion">caseversion</option>
+        <option value="caseselection">caseselection</option>
+        <option value="suite">suite</option>
+        <option value="tag">tag</option>
+        <option value="product">product</option>
+        <option value="productversion">productversion</option>
+        <option value="user">user</option>
+      </select>
+      /?format=json 
+    </h4>
+    <textarea id="queries" name="" rows="8" cols="40"></textarea>
+
+    <button id="go" style="width:12em; height:10em; vertical-align:bottom; background-color:green">GET</button>
+    <button id="schema" >Schema</button>
+
+    <p>Input queries line by line. (<code>format=json</code> is activated by default)</p>
+    <p>Example:<br/><code>limit=3<br/>offset=5<br/></code>
+      will result in <code>?limit=3&offset=5</code>
+    </p>
+    <p>By <a href="mailto:slyu@mozilla.com">Shing Lyu</a></p>
+
+    <script type="text/javascript" charset="utf-8">
+      var baseUrl = "https://moztrap.mozilla.org/api/v1/";
+      var url
+      var queries = ['format=json']
+      window.onload = function(){
+        url = (baseUrl + document.getElementById('resource').value + "/");
+
+        document.getElementById('resource').addEventListener("change", function(){
+          url = (baseUrl + this.value + "/");
+        });
+
+        document.getElementById('go').addEventListener("click", function(e){
+          var tmpQueries = queries.concat(document.getElementById('queries').value.split("\n"));
+          var queryString = "?" + tmpQueries.join("&");
+          window.open(url + queryString)
+        });
+
+        document.getElementById('schema').addEventListener("click", function(e){
+          window.open(url + "schema/?format=json")
+        });
+      }
+    </script>
+  </body>
+  <!-- 
+     TODO:
+       * Query history
+       * Sort history by frecency
+       * Button for quickly input history
+
+   -->
+</html>
