@@ -1,0 +1,23 @@
+{
+  "name": "moztrap-api-tester",
+  "version": "0.0.1",
+  "description": "REST API Testing for MozTrap",
+  "main": "testall.js",
+  "dependencies": {
+    "frisby": "~0.8.5",
+    "jasmine-node": "~1.14.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shinglyu/moztrap-api-tester.git"
+  },
+  "author": "Shing Lyu",
+  "license": "MPL2.0",
+  "bugs": {
+    "url": "https://github.com/shinglyu/moztrap-api-tester/issues"
+  }
+}
