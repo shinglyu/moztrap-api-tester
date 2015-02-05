@@ -4,6 +4,8 @@ MozTrap API Tester
 
 Use the `index.html` to manually test the API. Instructions are in the `index.html` page.
 
+[Online Version](https://rawgit.com/shinglyu/moztrap-api-tester/master/index.html)
+
 # Automated Tests
 
 A set of automated tests are located in the `spec/` folder. 
