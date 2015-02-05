@@ -1,4 +1,4 @@
-/* This test uses frisby.js http://frisbyjs.com/docs/api/ */
+// This test uses frisby.js http://frisbyjs.com/docs/api/ 
 var frisby = require('frisby');
 
 //var baseUrl =  'https://moztrap.mozilla.org/api/v1/'
